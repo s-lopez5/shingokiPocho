@@ -1,4 +1,4 @@
-###Autor 1: Antonio Vila Leis
+###Autor 1: Noelia Suarez Tuñas 
 ###Autor 2: Santiago López Silva
 import sys
 
