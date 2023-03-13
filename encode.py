@@ -11,20 +11,30 @@ def leer ():
     c = to_list(b)
     
     num = 0
-    i = 0
-    j = 0
+    column = 0
+    columnAux = 0
+    row = 0
     string = ""
+    neg = False
 
     for x in c:
         if x == "\n":
             string += "\n"
-            num = i
-            i = 0
-            j += 1
-        else: 
-            string += "number(" + str(i) + "," + str(j) + "," + x + ")."
-            i += 1
-    string2 = "row(0.." + str(num-1) + ").\ncolumn(0.. " + str(num-1) + ").\n"
+            num = column
+            column = 0
+            row += 1
+        elif x == "-":
+            neg = True
+        else:      
+            if neg == True:
+                neg = False
+                string += "number(" + str(column) + "," + str(row) + ",-" + x + ")."
+                column += 1
+            else:
+                string += "number(" + str(column) + "," + str(row) + "," + x + ")."
+                column += 1
+
+    string2 = "row(0.." + str(num-1) + ").\ncolumn(0.." + str(num-1) + ").\n"
     string2 += string
     s = open(sys.argv[1].replace("txt","lp"), "w+")
     s.write(string2)
