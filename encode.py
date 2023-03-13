@@ -22,7 +22,7 @@ def leer ():
             i = 0
             j += 1
         else: 
-            string += "cell(" + str(i) + "," + str(j) + "," + x + ")."
+            string += "number(" + str(i) + "," + str(j) + "," + x + ")."
             i += 1
     string2 = "row(0.." + str(num-1) + ").\ncolumn(0.. " + str(num-1) + ").\n"
     string2 += string
